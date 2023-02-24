@@ -1,0 +1,77 @@
+a{
+  text-decoration: none;
+}
+
+
+
+.navbar-icons .iconify{
+
+  width: 40px; 
+   height: 40px;
+   margin: 5px;
+   
+
+}
+
+
+
+#headertext{
+  color: white;
+  font-family: 'Nunito';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+}
+
+input[type="search"] {
+  border-radius: 30px;
+}
+
+.w-50{
+  width:40% !important;
+}
+
+
+.navb-text{
+  font-size: 20px;
+}
+
+
+
+@media screen and (min-width: 992px) {
+  .data {
+    display: block !important; 
+  }
+}
+
+
+.content{
+  display:flex;
+  flex-direction: row;
+}
+
+aside{
+  display:flex;
+  flex-direction: column;
+  margin-left: 1px;
+}
+
+aside[data-visible="false"]{
+   display: none !important;
+   flex-direction: none;
+}
+
+
+
+
+
+
+
+
+

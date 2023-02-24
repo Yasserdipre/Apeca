@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+
+
+
+h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+overlay-panel p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+.try span {
+    font-size: 12px;
+}
+
+.try a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.try button {
+    border-radius: 20px;
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+.try button:active {
+    transform: scale(0.95);
+  
+}
+
+.try button:focus {
+    outline: none;
+}
+
+.try button.ghost {
+    background-color: transparent;
+    border-color: #FFFFFF;
+}
+
+ 
+
+.try form {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.try input[type="number"], input[type="password"], input[type="text"], input[type="date"], select  {
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.contain {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.colorc2{
+    background: linear-gradient(to right, #160401, #463c3e);
+    color: #FFFFFF;
+}
+
+.try footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+
+.black{
+    
+    background: red;
+  color: white;
+
+}
+
+
+
+
+
+#txtsize{
+    font-size: 20px;
+}
+
+#twitter{
+    
+    width: 52px;
+    position: relative;
+    /*top: -8.5em;
+    left: 68px;*/
+    
+   
+}
+
+#facebook{
+
+    width: 55px;
+    position: relative;
+   
+
+}
+
+#instagram{
+
+    width: 52px;
+    position: relative;
+    top: 2px;
+}
+
+#containerlog{
+
+    width: 200px;
+    height: 60px;
+    /*background-color: ;*/
+   /* border: 1px solid red;*/
+    position: relative;
+      float: right
+   /* left: 1120px;*/
+
+
+}
+
+.pxe-2{
+    padding-right: 0.4rem!important;
+    padding-left: 0.4rem!important;
+}
+
+h2{
+    margin: 10px 0 10px ;
+}
+
+.try .navbar-brand{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+#containerlg{
+
+    width: 110px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-content: center ;
+    align-items: center;
+    line-height: 44px;
+}
+
+
+#rad1{
+    position: relative;
+    bottom: 28.5px;
+    right: 126px;
+
+}
+
+
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+
+div.text-center input{
+
+    position: relative;
+    left: 11px;
+    border-radius: 5px;
+}
+
+div.row input[type="text"]{
+    border-radius: 5px;
+}
+
+div.row label{
+    text-align: left;
+    font-size: 12px;
+    color: rgb(88, 83, 83);
+}
+.genero{
+    margin: 0;
+    padding: 0;
+
+}
+div.genero select{
+    text-align: left;
+    height: 50px;
+
+    border-radius: 5px;
+    margin-left: 2px;
+}
+
+div.genero label{
+    text-align: left;
+    font-size: 12px;
+    color: rgb(88, 83, 83);   
+}
+
+div.modal-footer input{
+    margin: auto;
+    display: block;
+    background-color: #FF4B2B;
+    border-color: #FF4B2B;
+
+}
+
+.botonpr{
+
+    color: white;
+}
+
+.botonpr:hover{
+    background-color: #0d6efd;
+    color: white;
+}
+
+div.modal-header h2{
+    font-weight: bold;
+    
+}
+
+.ocultar {
+    display: none;
+}
+ 
+.mostrar {
+    display: block;
+}
+
+

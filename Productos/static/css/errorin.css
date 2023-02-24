@@ -1,0 +1,19 @@
+.wid{
+    padding: 0 !important;
+
+}
+
+.alertmn{
+    position: relative;
+    margin: 0;
+    padding: 0 !important;
+    
+}
+
+.colt h6{
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    color: #842029 !important;
+}

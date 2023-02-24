@@ -1,0 +1,32 @@
+{% extends "login.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    
+    <div id="error" class="alert alert-danger  w-100 text-center" role="alert">
+        ¡Este correo ya está registrado!
+    </div>
+     
+    
+    <script type="text/javascript">
+        function redireccionar(){
+          
+          document.getElementById('signUp').style.display='active';
+          $("#signUp").trigger("click");
+        } 
+        setTimeout ("redireccionar()", 1); //tiempo expresado en milisegundos
+        </script>
+    {% endblock %}
+
+    
+    
+</body>
+</html>
+

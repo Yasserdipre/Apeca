@@ -1,0 +1,25 @@
+{% extends "registration/login.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href= "{% static 'css/errorin.css' %}" rel="stylesheet">
+</head>
+<body>
+    {% block main %}
+
+    <div  class="  wid   w-100 pt-1 " role="alert" style=" font-size: 12px; font-weight: 100; color: #842029 !important; ">
+        <h6 style="margin-bottom: 0;">¡La contraseña o correo es incorrecto!</h6>
+    </div>
+
+{% endblock %}
+
+    
+    
+</body>
+</html>
+

@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Airflow</title>
+  <meta name="Viewport" content="width=device--width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Smooch+Sans:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet"  type="text/css" href="{% static 'css/login.css' %}">
+<link rel="stylesheet"  type="text/css" href="{% static 'css/main.css' %}">
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+
+
+      <nav class="navbar navbar-expand-lg bg-dark navbar-light mb-4 "  style="background-color: #9C0F0F;">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-3 " href="http://127.0.0.1:8000/" style="padding-top: 0 !important; ">
+            <img src="{% static 'img/1.png' %}" alt="" width="130px" class="d-inline-block align-text-top">
+          </a>
+
+          
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 navbar-icons  ">
+                
+              
+                {% if request.user.is_authenticated %}
+                <li class="nav-item pt-1 "></li>
+                <a class="nav-link active" id="headertext" href="/">Articulos</a>
+                </li>
+
+                <li class="nav-item pt-1 "></li>
+                <a class="nav-link active" id="headertext" href="#">Cuentas</a>
+                </li>
+
+                <li class="nav-item pt-1 "></li>
+                <a class="nav-link active" id="headertext" href={% url 'ventas' %}>Ventas</a>
+                </li>
+
+                <li class="nav-item pt-1 "></li>
+                <a class="nav-link active" id="headertext" href={% url 'plataforma' %}>Plataformas</a>
+                </li>
+                {% endif %}
+
+              
+              
+            </ul>
+
+
+          
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 navbar-icons  ">
+                
+              
+                {% if request.user.is_authenticated %}
+                <li class="nav-item pt-1 "></li>
+                <a class="nav-link active" id="headertext" href={% url 'exit' %}>CERRAR SESION</a>
+                </li>
+                {% else %}
+                <li class="nav-item pt-1 "></li>
+                <a class="nav-link active" id="headertext" href="http://127.0.0.1:8000/">INICIAR SESION</a>
+                 </li>
+                {% endif %}
+
+              <li class="nav-item">
+                <a href="#">
+                  <span class="iconify" data-icon="bi:person-circle" style="color: white; "></span>
+                </a>
+              </li>
+              
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+          
+<!-- partial:index.partial.html -->
+<br>
+
+
+ 
+
+{% block data %}
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script  src="{% static 'js/login.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+        {% block js %} {% endblock %}
+      </body>
+      </html>
+      

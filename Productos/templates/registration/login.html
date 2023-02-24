@@ -1,0 +1,144 @@
+{% extends 'componentes/nav.html' %}
+{% load static %}
+
+
+
+
+
+{% block data %}
+
+<div class="container-fluid try  d-block d-sm-block d-md-none">
+  
+  <div class="container-fluid w-100 " >
+    
+    <div class="row w-100 mx-auto border rounded-3">
+      <div class="col-lg-6 pt-5 pb-5 rounded-start col-md-12form-container sign-in-container d-flex align-items-center">
+        <form class="w-100" action="" method="POST">{% csrf_token %}
+          
+            <h1 class="pt-2 pb-1">Sign in</h1>
+            <div class="social-container mt-3 mb-3 d-flex">
+                <div class="border me-1 px-2 rounded-circle"><a href="#" class="social"><i class='fab fa-facebook-f fa-lg'></i><br/></a></div>
+                <div class="border me-1 ms-1 px-1 rounded-circle"><a href="#" class="social"><i class="fab fa-google-plus-g"></i></a></div>
+                <div class="border ms-1 pxe-2 rounded-circle"><a href="#" class="social"><i class="fab fa-linkedin-in"></i></a></div>
+            </div>
+            <span>or use your account</span>
+            <input type="text"  name="username" placeholder="Email" />
+            <input type="password" name="password" placeholder="Password" />
+            {% block main %} {% endblock %}
+            <a href="#">Forgot your password?</a>
+            <input type="submit"  class="btn botonpr bg-dark p-2 w-75 rounded-pill" value="Entrar">
+            
+        </form>
+    </div>
+    <div class="col-lg-6 col-md-12 colorc2 rounded-end d-flex align-items-center" >
+        <div class="">
+            
+            <div class="mx-auto w-100  text-center pb-4 pt-4">
+              <img src="{% static 'img/1.png' %}" alt="" class="img-fluid">
+  
+              
+                
+  
+                
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid try mt-5 d-none d-sm-none d-md-block d-lg-block">
+  <div class="container w-75 " >
+    
+    <div class="row w-75 mx-auto border rounded-3">
+      <div class="col-lg-6 pt-5 pb-5 rounded-start col-md-12form-container sign-in-container d-flex align-items-center">
+        <form class="w-100" action="" method="POST">{% csrf_token %}
+          
+            <h1 class="pt-2 pb-1">Sign in</h1>
+            <div class="social-container mt-3 mb-3 d-flex">
+                <div class="border me-1 px-2 rounded-circle"><a href="#" class="social"><i class='fab fa-facebook-f fa-lg'></i><br/></a></div>
+                <div class="border me-1 ms-1 px-1 rounded-circle"><a href="#" class="social"><i class="fab fa-google-plus-g"></i></a></div>
+                <div class="border ms-1 pxe-2 rounded-circle"><a href="#" class="social"><i class="fab fa-linkedin-in"></i></a></div>
+            </div>
+            <span>or use your account</span>
+            <input type="text"  name="username" placeholder="Email" />
+            <input type="password" name="password" placeholder="Password" />
+            
+            <a href="#">Forgot your password?</a>
+            <input type="submit"  class="btn botonpr bg-dark p-2 w-75 rounded-pill" value="Entrar">
+            
+        </form>
+    </div>
+    <div class="col-lg-6 col-md-12 colorc2 rounded-end d-flex align-items-center" >
+        <div class="">
+            
+            <div class="mx-auto w-100  text-center">
+              <img src="{% static 'img/1.png' %}" alt="" class="img-fluid">
+  
+              
+                
+  
+                
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  </div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      

@@ -1,0 +1,126 @@
+{% extends 'componentes/nav.html' %}
+    
+
+{% block data %}
+
+{% if request.user.is_authenticated %}
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+<div class="w-100 mt-2" style="text-align: right;">
+    <button type="button" class="btn btn-primary me-3 " data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 110px;">
+        Añadir
+    </button>
+</div>
+
+<br>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Insertar Producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="w-100" action="/insert/" method="POST">{% csrf_token %}
+
+                <label for="">Referecia</label>
+                <input type="text" name="codigo_referencia" id="">
+
+                <label for="">Nombre</label>
+                <input type="text" name="nombre" id="">
+
+                <label for="">Modelo</label>
+                <input type="text" name="modelo" id="">
+
+                <label for="">Unidades</label>
+                <input type="text" name="unidades" id="">
+
+                <label for="">Precio de unidad</label>
+                <input type="text" name="preciounidad" id="">
+
+                <label for="">Precio de Venta</label>
+                <input type="text" name="precioventa" id="">
+
+                <label for="">Envio</label>
+                <input type="text" name="envio" id="">
+
+                
+
+            
+        </div>
+        <div class="modal-footer">
+
+        <div class="w-75 d-flex me-5 pe-5">
+            <button type="button" class="btn btn-secondary w-50 " data-bs-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary w-50" value="Añadir">
+        </div>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="table-responsive py-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Codigo de Referecia</th>
+                    <th>Nombre</th>
+                    <th>Modelo</th>
+                    <th>unidades</th>
+                    <th>Precio de Unidad</th>
+                    <th>Precio de Venta</th>
+                    <th>Precio de Envio</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in Productos %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{c.codigo_referencia}}</td>
+                    <td>{{c.nombre}}</td>
+                    <td>{{c.modelo}}</td>
+                    <td>{{c.unidades}}</td>
+                    <td>{{c.preciounidad}}</td>
+                    <td>{{c.precioventa}}</td>
+                    <td>{{c.envio}}</td>
+                    <td><a href="editar/{{c.id}}" class="btn btn-info">Editar</a></td>
+                    <td><a href="eliminar/{{c.id}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
+
+
+{% endblock %}
+

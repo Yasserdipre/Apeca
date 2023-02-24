@@ -1,0 +1,130 @@
+{% extends 'componentes/nav.html' %}
+    
+
+{% block data %}
+
+{% if request.user.is_authenticated %}
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+<div class="w-100 mt-2" style="text-align: right;">
+    <button type="button" class="btn btn-primary me-3 " data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 110px;">
+        Añadir
+    </button>
+</div>
+
+<br>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Insertar Producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="w-100" action="/insertplataforma/" method="POST">{% csrf_token %}
+
+                <label for="">Referecia</label>
+                <input type="text" name="codigo_referencia" id="">
+
+                <label for="">Nombre</label>
+                <input type="text" name="nombre" id="">
+
+                <label for="">Modelo</label>
+                <input type="text" name="modelo" id="">
+
+                <label for="">Etsy</label>
+                <input type="text" name="etsy" id="">
+
+                <label for="">Wallapop</label>
+                <input type="text" name="wallapop" id="">
+
+                <label for="">Ebay</label>
+                <input type="text" name="ebay" id="">
+
+                <label for="">Joom</label>
+                <input type="text" name="joom" id="">
+
+                <label for="">Amazon</label>
+                <input type="text" name="amazon" id="">
+
+                
+
+            
+        </div>
+        <div class="modal-footer">
+
+        <div class="w-75 d-flex me-5 pe-5">
+            <button type="button" class="btn btn-secondary w-50 " data-bs-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary w-50" value="Añadir">
+        </div>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="table-responsive py-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Codigo de Referecia</th>
+                    <th>Nombre</th>
+                    <th>Modelo</th>
+                    <th>Etsy</th>
+                    <th>Wallapop</th>
+                    <th>Joom</th>
+                    <th>Ebay</th>
+                    <th>Amazon</th>
+                    <th>Editar</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in Productos %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{c.codigo_referencia}}</td>
+                    <td>{{c.nombre}}</td>
+                    <td>{{c.modelo}}</td>
+                    <td>{{c.etsy}}</td>
+                    <td>{{c.wallapop}}</td>
+                    <td>{{c.ebay}}</td>
+                    <td>{{c.joom}}</td>
+                    <td>{{c.amazon}}</td>
+                    <td><a href="../editarplataforma/{{c.id}}" class="btn btn-info">Editar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
+
+
+{% endblock %}
+
