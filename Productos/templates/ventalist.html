@@ -14,7 +14,7 @@
 <!-- Button trigger modal -->
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light mt-n1">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mt-n1 mb-1">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Ventas</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
 
 
 
-<div class="container">
+<div class="container mt-4">
     <div class="table-responsive py-2">
         <table class="table table-striped">
             <thead>
@@ -76,7 +76,7 @@
                     <td>{{c.precioventa}}</td>
                     <td>{{c.envio}}</td>
                     <td>{{c.cliente}}</td>
-                    <td><a href="editar/{{c.id}}" class="btn btn-info">Editar</a></td>
+                    <td><a href="../editarVent/{{c.id}}" class="btn btn-info">Editar</a></td>
                     <td><a href="../eliminarvnt/{{c.id}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
                 </tr>
                 {% endfor %}

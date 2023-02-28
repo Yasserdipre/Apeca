@@ -182,7 +182,43 @@ def eliminarVent(request, id):
 
     return redirect('../ventaslist')
 
+@login_required
+def editarVent(request, id):
+    return render(request, 'editarVent.html', {"id": id})
 
+@login_required
+def editarVentdata(request, id):
+    codigo_referencia = request.POST['codigo_referencia']
+    nombre = request.POST['nombre']
+    modelo = request.POST['modelo']
+    numserie = request.POST['numserie']
+    cliente = request.POST['cliente']
+    precioventa = request.POST['precioventa']
+    envio = request.POST['envio']
+
+
+
+
+    curso = Ventas.objects.get(id=id)
+    if len(codigo_referencia)>0:
+        curso.codigo_referencia = codigo_referencia
+    if len(nombre)>0:
+        curso.nombre = nombre
+    if len(modelo)>0:
+        curso.modelo = modelo
+    if len(numserie)>0:
+        curso.numserie = numserie
+    if len(precioventa)>0:
+        curso.precioventa = precioventa
+    if len(envio)>0:
+        curso.envio = envio
+    if len(cliente)>0:
+        curso.cliente = cliente
+    curso.save()
+
+    messages.success(request, '¡Datos actualizados!')
+
+    return redirect('../ventaslist')
 
 
 

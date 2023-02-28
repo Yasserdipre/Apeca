@@ -1,0 +1,78 @@
+{% extends 'componentes/nav.html' %}
+    
+
+{% block data %}
+
+{% if request.user.is_authenticated %}
+
+<div class="w-25">
+    <a href="../">
+    <div class="btn btn-dark w-25 ms-2">
+        
+            <span class="iconify" data-icon="mdi:arrow-left" style="color: white;"></span>
+
+    </div>
+</a>
+</div>
+
+
+
+
+
+<!-- Button trigger modal -->
+<div class="container w-50">
+{% block dataedit %} 
+    <div class="">
+        <form class="w-100" action="/editarVentdata/{{id}}" method="POST">{% csrf_token %}
+
+            <div class="d-flex">
+                <div class="d-block pe-3">
+                    <label for="">Referecia</label>
+                    <input type="text" name="codigo_referencia" id="">
+                </div>
+
+                <div class="d-block ps-3">
+                    <label for="">Nombre</label>
+                    <input type="text" name="nombre" id="">
+                </div>
+            </div>
+
+            <label for="">Modelo</label>
+            <input type="text" name="modelo" id="">
+
+            <label for="">Número de serie</label>
+            <input type="text" name="numserie" id="">
+
+            <label for="">Precio de Venta</label>
+            <input type="text" name="precioventa" id="">
+
+            <label for="">Envio</label>
+            <input type="text" name="envio" id="">
+
+            <label for="">Cliente</label>
+            <input type="text" name="cliente" id="">
+
+        
+    </div>
+    <div class="d-flex mt-2">
+
+    <div class=" w-100">
+        <input type="submit" class="btn btn-primary w-100" value="Añadir">
+    </div>
+    </div>
+</form>
+
+{% endblock %}
+
+</div>
+
+
+
+
+
+  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+  {% endif %}
+
+{% endblock %}
+
