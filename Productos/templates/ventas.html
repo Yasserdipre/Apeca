@@ -52,10 +52,10 @@
         <input type="text" name="numserie" id="">
 
         <label for="">Precio de Venta</label>
-        <input type="text" name="precioventa" id="">
+        <input type="text" name="precioventa" id="" class="separadorDecimal">
 
         <label for="">Envio</label>
-        <input type="text" name="envio" id="">
+        <input type="text" name="envio" id="" class="separadorDecimal">
 
         <label for="">Cliente</label>
         <input type="text" name="cliente" id="">
@@ -78,5 +78,6 @@
 {% block js %}
 
 <script  src="{% static 'js/modal.js' %}"></script>
+
 
 {% endblock %}

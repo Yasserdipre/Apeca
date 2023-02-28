@@ -8,6 +8,7 @@ urlpatterns = [
     path('insert/', views.insert, name='insert'),
     path('plataforma/', views.plataforma, name='plataforma'),
     path('eliminar/<id>', views.eliminarArt),
+    path('eliminarvnt/<id>', views.eliminarVent),
     path('editar/<id>', views.editar),
     path('editarplataforma/<id>', views.editarplataforma, name='editarplataforma'),
     path('editarArt/<id>', views.editarArt),
@@ -15,4 +16,5 @@ urlpatterns = [
     path('ventas/', views.ventas, name='ventas'),
     path('ventasdata/', views.ventaslg, name='ventasdata'),
     path('ventasagg/', views.ventasagg, name='ventasagg'),
+    path('ventaslist/', views.ventalist, name='ventaslist'),
 ]

@@ -165,12 +165,22 @@ def ventasagg(request):
     preciodata.unidades = int(data) - int(1)
     preciodata.save()
     print(precio)
-    return redirect('home')
+    return redirect('../ventaslist')
 
 
+@login_required
+def ventalist(request):
+    homedata = Ventas.objects.all().values('id','codigo_referencia', 'nombre', 'modelo', 'numserie', 'precioventa', 'envio', 'cliente')
+    return render(request, 'ventalist.html', {"Ventas": homedata})
 
+@login_required
+def eliminarVent(request, id):
+    curso = Ventas.objects.get(id=id)
+    curso.delete()
 
+    messages.success(request, '¡Factura eliminada!')
 
+    return redirect('../ventaslist')
 
 
 

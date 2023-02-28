@@ -1,0 +1,92 @@
+{% extends 'componentes/nav.html' %}
+    
+
+{% block data %}
+
+{% if request.user.is_authenticated %}
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light mt-n1">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Ventas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mx-auto">
+          <a class="nav-link active" aria-current="page" href="../ventaslist/">Facturas</a>
+          <a class="nav-link" href="../ventas/">Vender</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+  
+
+
+  <br>
+
+  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="table-responsive py-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Codigo de Referecia</th>
+                    <th>Nombre</th>
+                    <th>Modelo</th>
+                    <th>Número de serie</th>
+                    <th>Precio de Unidad</th>
+                    <th>Envio</th>
+                    <th>Cliente</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in Ventas %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{c.codigo_referencia}}</td>
+                    <td>{{c.nombre}}</td>
+                    <td>{{c.modelo}}</td>
+                    <td>{{c.numserie}}</td>
+                    <td>{{c.precioventa}}</td>
+                    <td>{{c.envio}}</td>
+                    <td>{{c.cliente}}</td>
+                    <td><a href="editar/{{c.id}}" class="btn btn-info">Editar</a></td>
+                    <td><a href="../eliminarvnt/{{c.id}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
+
+
+{% endblock %}
+

@@ -26,7 +26,7 @@
 
       <nav class="navbar navbar-expand-lg bg-dark navbar-light mb-4 "  style="background-color: #9C0F0F;">
         <div class="container-fluid">
-          <a class="navbar-brand ms-3 " href="http://127.0.0.1:8000/" style="padding-top: 0 !important; ">
+          <a class="navbar-brand ms-3 " href="../" style="padding-top: 0 !important; ">
             <img src="{% static 'img/1.png' %}" alt="" width="130px" class="d-inline-block align-text-top">
           </a>
 
@@ -50,7 +50,7 @@
                 </li>
 
                 <li class="nav-item pt-1 "></li>
-                <a class="nav-link active" id="headertext" href={% url 'ventas' %}>Ventas</a>
+                <a class="nav-link active" id="headertext" href={% url 'ventaslist' %}>Ventas</a>
                 </li>
 
                 <li class="nav-item pt-1 "></li>
@@ -73,7 +73,7 @@
                 </li>
                 {% else %}
                 <li class="nav-item pt-1 "></li>
-                <a class="nav-link active" id="headertext" href="http://127.0.0.1:8000/">INICIAR SESION</a>
+                <a class="nav-link active" id="headertext" href="/">INICIAR SESION</a>
                  </li>
                 {% endif %}
 
@@ -89,7 +89,10 @@
         </div>
       </nav>
 
+      {% block br %}
 
+
+      {% endblock %}
 
 
 
@@ -107,6 +110,7 @@
 
           
 <!-- partial:index.partial.html -->
+
 <br>
 
 
