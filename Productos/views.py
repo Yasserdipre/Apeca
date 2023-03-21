@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from .models import Producto, Ventas, Clientes
+from .models import Producto, Ventas, Clientes, Perfil
 from django.contrib import messages
-
+from django.conf import settings
+from os import remove
+from os import path
+import os
+from pathlib import Path
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  LOGIN    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 # Create your views here.
@@ -12,6 +16,8 @@ def login(request):
 
 @login_required
 def home(request):
+    user = request.user.username
+    print(user)
     homedata = Producto.objects.all().values('id','codigo_referencia', 'nombre', 'modelo', 'unidades', 'preciounidad', 'precioventa', 'envio')
     return render(request, 'inicio.html', {"Productos": homedata})
 
@@ -220,12 +226,43 @@ def editarVentdata(request, id):
 
     return redirect('../ventaslist')
 
+@login_required
+def perfil(request):
+    user = request.user.first_name
+    last_name= request.user.last_name
+    imgname = Perfil.objects.filter(nombre=user).values('photo_perfil')
+    data = Perfil.objects.filter(nombre=user).values('dni', 'estado', 'email', 'cargo', 'ubicacion', 'fecha_de_nacimiento')
+    return render(request, 'perfil.html', {"user": user, "last_name": last_name, "imgname": imgname, "data": data})
 
 
+@login_required
+def fotoperfil(request):
+    user = request.user.first_name
+    last_name= request.user.last_name
+    imgname1 = Perfil.objects.filter(nombre=user).values('photo_perfil').values_list('photo_perfil', flat=True)
+    imagenperfil = request.FILES.get('imagenperfil')
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    filedata = os.path.join(BASE_DIR, 'Productos\media\{}')
+    file_path = filedata.format(imgname1[0])
+    print(file_path)
+    if path.exists(file_path):
+        remove(file_path)
+    curso = Perfil.objects.get(nombre=user)
+    curso.photo_perfil = imagenperfil
+    curso.save()
+    imgname = Perfil.objects.filter(nombre=user).values('photo_perfil')
+    data = Perfil.objects.filter(nombre=user).values('dni', 'estado', 'email', 'cargo', 'ubicacion', 'fecha_de_nacimiento')
+    return render(request, 'perfil.html', {"user": user, "last_name": last_name, "imgname": imgname, "data": data})
 
 
-
-
+@login_required
+def añadirestado(request):
+    user = request.user.first_name
+    estado = request.POST['estado']
+    data = Perfil.objects.get(nombre=user)
+    data.estado = estado
+    data.save()
+    return redirect('../perfil/')
 
 
 

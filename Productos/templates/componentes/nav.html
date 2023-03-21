@@ -15,7 +15,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Smooch+Sans:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet"  type="text/css" href="{% static 'css/login.css' %}">
 <link rel="stylesheet"  type="text/css" href="{% static 'css/main.css' %}">
- 
+{% block css %} {% endblock %}
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -78,7 +79,7 @@
                 {% endif %}
 
               <li class="nav-item">
-                <a href="#">
+                <a href={% url 'perfil' %}>
                   <span class="iconify" data-icon="bi:person-circle" style="color: white; "></span>
                 </a>
               </li>

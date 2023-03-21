@@ -1,0 +1,100 @@
+{% extends 'componentes/nav.html' %}
+{% load static %}
+
+{% block css %} 
+<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet"  type="text/css" href="{% static 'css/perfil.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+{% endblock %}
+    
+
+    {% block data %}
+
+
+
+    
+
+
+
+    <section class="seccion-perfil-usuario" style="z-index: 2;">
+        <div class="perfil-usuario-header" style="z-index: 1;">
+            <div class="perfil-usuario-portada" style="z-index: 1;">
+                {% for i in imgname %}
+                <div class="perfil-usuario-avatar" style="display: inline-block; margin:5px; background-image: url('../media/{{i.photo_perfil}}'); background-size:cover; background-position:center; background-repeat:no-repeat; z-index: -2;">
+                    {% endfor %} 
+
+                    <form action="/fotoperfil/" method="POST" class="d-flex pr-5 w-5" enctype="multipart/form-data" >{% csrf_token %}
+                        <label><i class="fa-solid fa-image label" style="color: #000;"></i>
+                        <input type="file"  class="d-none" name="imagenperfil" onchange="this.form.submit()"/>
+                        </label>  
+                    </form>
+                </div>
+                    
+
+                
+
+                <div type="button" class="boton-portada">
+                    <form action="/insert/" method="POST">{% csrf_token %}
+                        <label><i class="fa-solid fa-image" style="color: #e7e2e2;"></i> Cambiar fondo
+                        <input type="file"  class="d-none" name="seleccionar" onchange="this.form.submit()"/>
+                    </form> 
+                    
+                </div>
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">{{ user }} {{ last_name }}</h3>
+                <div class="mx-auto">
+                    <div class="d-flex text-center" id="change">
+                    {% for d in data %}
+                    <p class="texto mx-auto">{{d.estado}}</p>
+                    {% endfor %}
+                    <button class="mx-2 rounded-circle border-0" style="padding-left: 8px; padding-right: 8px; height: 1.9rem; margin-top: -0.2rem;" onclick="changecargo();"><i class="fa-solid fa-pen"></i></button>
+                    </div>
+                    
+                    <div class="d-flex d-none" id="send">
+                        <form class="w-100" action="/añadirestado/" method="POST">{% csrf_token %}
+                        <input type="text" name="estado" id="" placeholder="Escriba el nuevo estado">
+                        <button type="submit" class="mx-2 mt-1 rounded-circle border-0" style="padding-left: 17px; padding-right: 17px; height: 3rem;"><i class="fa-solid fa-check"></i></button>
+                        
+                    </form>
+                        <button class="mx-2 mt-1 rounded-circle border-0" style="padding-left: 17px; padding-right: 17px; height: 3rem;" onclick="deletecargo();"><i class="fa-regular fa-x"></i></button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    {% for i in data %}
+                    <li><i class="icono fas fa-calendar-alt"></i> Dni: {{i.dni}}</li>
+                    <li><i class="icono fas fa-phone-alt"></i> Email: {{i.email}}</li>
+
+
+                </ul>
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-briefcase"></i> Cargo: {{i.cargo}}</li>
+                    <li><i class="icono fas fa-map-marker-alt"></i> Ubicacion: {{i.ubicacion}}</li>
+                    
+
+                </ul>
+                {% endfor %}
+            </div>
+            <div class="redes-sociales">
+                <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
+                <a href="" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter"></i></a>
+                <a href="" class="boton-redes instagram fab fa-instagram"><i class="icon-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+    <!--====  End of html  ====-->
+    {% endblock %}
+
+    {% block js %} 
+    <script  src="{% static 'js/perfil.js' %}"></script>
+    {% endblock %}
+
+
+
