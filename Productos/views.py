@@ -256,7 +256,7 @@ def fotoperfil(request):
 
 
 @login_required
-def añadirestado(request):
+def anadirestado(request):
     user = request.user.first_name
     estado = request.POST['estado']
     data = Perfil.objects.get(nombre=user)

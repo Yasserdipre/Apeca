@@ -27,7 +27,7 @@ class Clientes(models.Model):
     plataforma = models.CharField(max_length = 60, verbose_name= 'Plataforma')
 
 class Ventas(models.Model):
-    codigo_referencia = models.CharField(max_length = 40, verbose_name= 'codigo_referencia', unique=True)
+    codigo_referencia = models.CharField(max_length = 40, verbose_name= 'codigo_referencia')
     nombre = models.CharField(max_length = 60, verbose_name= 'Nombres')
     modelo = models.CharField(max_length = 40, verbose_name= 'Modelo')
     numserie = models.CharField(max_length = 60, verbose_name= 'numserie', unique=True)
